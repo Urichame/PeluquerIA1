@@ -1,0 +1,39 @@
+body, html
+{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color:rgb(36, 14, 0);
+}
+
+.formadecara
+{
+    position: absolute;
+    width: 850px;
+    top: 60px;
+    right: 250px;
+    z-index: 2;
+}
+
+.continuar
+{
+    font-size: 20px; 
+    padding: 10px 20px; 
+    background-color: black; 
+    border: 2px solid white;
+    border-width: 3px; 
+    border-radius: 50px; 
+    font-weight: bold;
+    text-decoration: none; 
+    color: white ;
+    text-align: center; 
+    margin: 1px 425px;
+    z-index: 2;
+    
+    position: absolute;
+    top: 550px;
+    right: -400px;
+}

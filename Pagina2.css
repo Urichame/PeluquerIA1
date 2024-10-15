@@ -1,0 +1,150 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color:rgb(36, 14, 0);
+}
+
+.AdjuntarImagen {
+    font-size: 20px;
+    padding: 20px 30px;
+    background-color: black;
+    border-width: 5px;
+    border-radius: 35px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: 5px;
+    z-index: 2;
+
+    position: absolute;
+    top: center;
+    right: 67%;
+    transform: translateY(center);
+    transform: translateX(67%);
+}
+
+.Cortes
+{
+    font-size: 20px;
+    padding: 25px 35px;
+    background-color: black;
+    border-width: 5px;
+    border-radius: 35px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: 5px;
+    z-index: 2;
+    
+    position: absolute;
+    top: 23%;
+    right: 40%;
+    transform: translateY(23%);
+    transform: translateX(40%);
+}
+
+.Caras
+{
+    font-size: 20px;
+    padding: 25px 35px;
+    background-color: black;
+    border-width: 5px;
+    border-radius: 35px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    margin: 5px;
+    z-index: 2;
+    
+    position: absolute;
+    top: 63%;
+    right: 40%;
+    transform: translateY(63%);
+    transform: translateX(40%);
+}
+.pin
+{
+    position: absolute; 
+    top: center; 
+    left: 315px; 
+    width: 46px; 
+    height: auto; 
+    z-index: 2;
+
+}
+
+.cosoparapelo
+{
+    position: absolute; 
+    top: center; 
+    left: 0px; 
+    width: 500px; 
+    height: auto; 
+    color: black;
+    z-index: 1;
+}
+
+.cortandopelo
+{
+    position: absolute; 
+    top: 78px; 
+    left: 295px; 
+    width: 240px; 
+    height: auto; 
+    color: black;
+    z-index: 1; 
+}
+
+.rectangulo
+{
+    position: absolute;
+    width: 250px;
+    top: center;
+    right: 70%;
+    transform: translateY(center);
+    transform: translateX(70%);
+}
+
+.rectangulo2
+{
+    position: absolute;
+    width: 200px;
+    top: 13%;
+    right: 40%;
+    transform: translateY(13%);
+    transform: translateX(40%);
+}
+
+.fotocorte
+{
+    position: absolute;
+    width: 80px;
+    top: 13%;
+    right: 40.8%;
+    transform: translateY(13%);
+    transform: translateX(40.8%);
+}
+
+.rectangulo3
+{
+    position: absolute;
+    width: 200px;
+    top: 63%;
+    right: 39.9%;
+    transform: translateY(63%);
+    transform: translateX(39.9%);
+}
+
+.fotocara
+{
+    position: absolute;
+    width: 80px;
+    top: 67%;
+    right: 40.7%;
+    transform: translateY(67%);
+    transform: translateX(40.7%);
+}

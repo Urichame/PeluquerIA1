@@ -1,0 +1,18 @@
+body,html
+{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color:rgb(36, 14, 0);
+}
+.fondo
+{
+    position: absolute;
+    width: 450px;
+    top: center;
+    right: 450px;
+    z-index: 2;
+}

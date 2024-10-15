@@ -1,0 +1,57 @@
+body,html
+{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color:rgb(36, 14, 0);
+}
+
+.caras
+{
+    position: absolute;
+    width: 600px;
+    top: 11%;
+    right: 27%;
+    transform: translateY(11%);
+    z-index: 2;
+}
+
+h1
+{
+    position: absolute;
+    width: 600px;
+    top: -24%;
+    right: 50%;
+    transform: translateY(-23%);
+    transform: translateX(50%);
+    font-size: 50px;  
+    text-align: center;  
+    margin-top: 200px;  
+    font-weight: bold; 
+    color: white;
+}
+
+.spray
+{
+    position: absolute; 
+    top: 80px; 
+    right: 0px; 
+    width: 500px; 
+    height: auto; 
+    color: black;
+    z-index: 1; 
+}
+
+.formas
+{
+    position: absolute; 
+    top: 180px; 
+    right: 450px; 
+    width: 400px; 
+    height: auto; 
+    color: black;
+    z-index: 2;  
+}

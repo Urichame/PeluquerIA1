@@ -1,0 +1,28 @@
+body, html
+{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background-color:rgb(36, 14, 0);
+}
+
+.recomendado
+{
+    position: absolute;
+    width: 750px;
+    top: 100px;
+    right: 350px;
+    z-index: 2;
+}
+
+.tijeranavaja
+{
+    position: absolute;
+    width: 500px;
+    top: 100px;
+    right: -10px;
+}
+

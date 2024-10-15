@@ -1,0 +1,30 @@
+body,html
+{
+    background-color:rgb(36, 14, 0);
+
+}
+.Comenzar
+{ 
+    font-size: 50px; /* Tamaño de la letra */
+    padding: 10px 100px; /* Tamaño de boton */
+    background-color: white; /* Color de fondo */
+    border: 2px solid black; /* Color de borde */
+    border-width: 8px; /* Grosor de borde */
+    border-radius: 50px; /* Curvatura de esquinas */
+    font-weight: bold; /* Lo pone en negrita */
+    text-decoration: none; /* Elimina decoracion al texto */
+    color: black; /* Color de texto */
+    text-align: center; /* Alinea el texto en el centro */
+    margin: 1px 425px; /* Moverlo en X */
+} 
+    
+    h1 
+{ 
+    font-size: 100px; /* Tamaño */ 
+    text-align: center; /* Poner el texto en el medio */ 
+    margin-top: 200px; /* Bajar o subir */ 
+    font-weight: bold; /* Lo pone en negrita */
+    color: white;
+    
+}
+
