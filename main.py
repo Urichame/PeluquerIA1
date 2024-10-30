@@ -8,7 +8,7 @@ app = Flask(__name__)
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
-# Función para determinar la forma del rostro
+# Función para determinar la forma del rostrod
 def determinar_forma_del_rostro(puntos):
     ancho_frente = puntos[16].x - puntos[0].x
     alto_frente = puntos[8].y - puntos[19].y
