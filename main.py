@@ -1,14 +1,11 @@
-from flask import Flask, Response
 import cv2
 import dlib
 
-app = Flask(__name__)
-
-# Cargar el detector y predictor de Dlib
+# Cargar el detector de rostros y el predictor de puntos faciales
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
-# Función para determinar la forma del rostrod
+# Función para determinar la forma del rostro
 def determinar_forma_del_rostro(puntos):
     ancho_frente = puntos[16].x - puntos[0].x
     alto_frente = puntos[8].y - puntos[19].y
@@ -26,7 +23,7 @@ def determinar_forma_del_rostro(puntos):
     else:
         return "Cara redonda"
 
-# Recomendaciones según la forma de la cara
+# Diccionario de recomendaciones de cortes de cabello
 recomendaciones_cortes = {
     "Cara ovalada": "French crop y taper fade",
     "Cara redonda": "Hugh fade y burst fade con texturizado",
@@ -35,34 +32,37 @@ recomendaciones_cortes = {
     "Cara diamante": "French crop y mid fade con texturizado"
 }
 
-# Ruta que captura el video
-@app.route('/video_feed')
-def video_feed():
-    cap = cv2.VideoCapture(0)
+# Capturar video desde la cámara
+cap = cv2.VideoCapture(0)
 
-    def generate_frames():
-        while True:
-            ret, frame = cap.read()
-            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            rostros = detector(gray)
+while True:
+    ret, frame = cap.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-            for rostro in rostros:
-                landmarks = predictor(gray, rostro)
-                puntos = [(p.x, p.y) for p in landmarks.parts()]
-                forma_cara = determinar_forma_del_rostro(landmarks.parts())
-                corte_recomendado = recomendaciones_cortes.get(forma_cara, "No encontrado")
+    # Detectar rostros en la imagen en escala de grises
+    rostros = detector(gray)
 
-                for p in puntos:
-                    cv2.circle(frame, p, 2, (0, 255, 0), -1)
+    for rostro in rostros:
+        landmarks = predictor(gray, rostro)
+        puntos = [(p.x, p.y) for p in landmarks.parts()]
 
-                cv2.putText(frame, forma_cara, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 2)
-                cv2.putText(frame, corte_recomendado, (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
+        forma_cara = determinar_forma_del_rostro(landmarks.parts())
+        corte_recomendado = recomendaciones_cortes.get(forma_cara, "No encontrado")
 
-            ret, buffer = cv2.imencode('.jpg', frame)
-            frame = buffer.tobytes()
-            yield (b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+        # Dibujar puntos en el rostro
+        for p in puntos:
+            cv2.circle(frame, p, 2, (0, 255, 0), -1)
 
-    return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+        # Mostrar forma de la cara y recomendación de corte
+        cv2.putText(frame, forma_cara, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 2)
+        cv2.putText(frame, corte_recomendado, (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+    # Mostrar la ventana de la cámara
+    cv2.imshow("Cámara", frame)
+
+    # Presionar 'q' para salir
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
