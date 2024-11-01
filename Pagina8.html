@@ -11,6 +11,36 @@
 <img class="recomendado" src="Group 7.png">
 <img class="tijeranavaja" src="TIJERA Y NAVAJA 1.png">
 
+<a class="texto" id="buzzcutt">BUZZ CUTT</a>
+<a class="texto2" id="taperfade">TAPER FADE</a>
+<a class="texto" id="skinfade">SKIN FADE</a>
+<a class="texto2" id="frenchcrop">FRENCH CROP</a>
+<a class="texto" id="burstfade">BURST FADE</a>
+<a class="texto2" id="baldfade">BALD FADE</a>
+
+
+<script>
+   const textoMostrado = localStorage.getItem("textoMostrado");
+
+
+if (textoMostrado === "texto1") {
+
+  document.getElementById("buzzcutt").style.display = "block";
+  document.getElementById("taperfade").style.display = "block";
+
+} else if (textoMostrado === "texto2") {
+
+  document.getElementById("burstfade").style.display = "block";
+  document.getElementById("baldfade").style.display = "block";
+  
+} else if (textoMostrado === "texto3") {
+
+  document.getElementById("skinfade").style.display = "block";
+  document.getElementById("frenchcrop").style.display = "block";
+}
+  </script>
+
+
 <link rel="stylesheet" href="Pagina8.css">
 
 

@@ -26,3 +26,34 @@ body, html
     right: -10px;
 }
 
+.texto
+{
+    display: none;
+    font-size: 20px; 
+    padding: 10px 20px; 
+    border: 2px solid black;
+    border-width: 3px; 
+    border-radius: 50px; 
+    font-weight: bold;
+    text-decoration: none; 
+    color:black ;
+    text-align: center; 
+    margin: 1px 520px;
+    z-index: 2;
+}
+
+.texto2
+{
+    display: none;
+    font-size: 20px; 
+    padding: 10px 20px; 
+    border: 2px solid black;
+    border-width: 3px; 
+    border-radius: 50px; 
+    font-weight: bold;
+    text-decoration: none; 
+    color:black ;
+    text-align: center; 
+    margin: 1px 320px;
+    z-index: 2;
+}

@@ -37,3 +37,20 @@ body, html
     top: 550px;
     right: -400px;
 }
+
+.texto
+{
+    display: none;
+    font-size: 40px; 
+    padding: 15px 30px; 
+    border: 2px solid black;
+    border-width: 3px; 
+    border-radius: 50px; 
+    font-weight: bold;
+    text-decoration: none; 
+    color:black ;
+    text-align: center; 
+    margin: 1px 520px;
+    z-index: 2;
+
+}
