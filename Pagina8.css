@@ -28,9 +28,9 @@ body, html
 
 .texto
 {
-    display: none;
-    font-size: 20px; 
-    padding: 10px 20px; 
+    display: block;
+    font-size: 25px; 
+    padding: 15px 30px; 
     border: 2px solid black;
     border-width: 3px; 
     border-radius: 50px; 
@@ -38,15 +38,16 @@ body, html
     text-decoration: none; 
     color:black ;
     text-align: center; 
-    margin: 1px 520px;
+    margin: 1px 350px;
+    transform: translateX(10px);
     z-index: 2;
 }
 
-.texto2
+.textos
 {
-    display: none;
-    font-size: 20px; 
-    padding: 10px 20px; 
+    display: block;
+    font-size: 25px; 
+    padding: 15px 30px; 
     border: 2px solid black;
     border-width: 3px; 
     border-radius: 50px; 
@@ -54,6 +55,7 @@ body, html
     text-decoration: none; 
     color:black ;
     text-align: center; 
-    margin: 1px 320px;
+    margin: 1px 350px;
+    transform: translateX(-520px);
     z-index: 2;
 }
