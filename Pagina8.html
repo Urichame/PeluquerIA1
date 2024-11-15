@@ -5,42 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PeluqerIA</title>
+    <link rel="stylesheet" href="Pagina8.css">
 </head>
 <body>
 
 <img class="recomendado" src="Group 7.png">
 <img class="tijeranavaja" src="TIJERA Y NAVAJA 1.png">
- 
 
-<a class="texto" id="buzzcutt">BUZZ CUTT</a>
-<a class="textos" id="taperfade">TAPER FADE</a>
-<a class="texto" id="skinfade">SKIN FADE</a>
-<a class="textos" id="frenchcrop">FRENCH CROP</a>
-<a class="texto" id="burstfade">BURST FADE</a>
-<a class="textos" id="baldfade">BALD FADE</a>
+<div class="text-image" id="buzzcutt-container">
+    <img src="Buzz cut.png" alt="Buzz Cutt" class="imagen">
+    <a class="texto" id="buzzcutt">BUZZ CUTT</a>
+</div>
+
+<div class="text-image" id="taperfade-container">
+    <img src="Taper fade.png" alt="Taper Fade" class="imagenes">
+    <a class="textos" id="taperfade">TAPER FADE</a>
+</div>
+
+<div class="text-image" id="skinfade-container">
+    <img src="Skin fade.png" alt="Skin Fade" class="imagen">
+    <a class="texto" id="skinfade">SKIN FADE</a>
+</div>
+
+<div class="text-image" id="frenchcrop-container">
+    <img src="French crop.png" alt="French Crop" class="imagenes">
+    <a class="textos" id="frenchcrop">FRENCH CROP</a>
+</div>
+
+<div class="text-image" id="burstfade-container">
+    <img src="Burst fade.png" alt="Burst Fade" class="imagen">
+    <a class="texto" id="burstfade">BURST FADE</a>
+</div>
+
+<div class="text-image" id="baldfade-container">
+    <img src="Bald fade.png" alt="Bald Fade" class="imagenes">
+    <a class="textos" id="baldfade">BALD FADE</a>
+</div>
 
 <script>
    const textoMostrado = localStorage.getItem("textoMostrado");
 
+   document.querySelectorAll('.text-image').forEach(element => {
+       element.style.display = 'none';
+   });
+
    if (textoMostrado === "texto1") {
-      // Si fue "CORAZON", muestra BUZZ CUTT y TAPER FADE
-      document.getElementById("buzzcutt").style.display = "block";
-      document.getElementById("taperfade").style.display = "block";
+       document.getElementById("buzzcutt-container").style.display = "block";
+       document.getElementById("taperfade-container").style.display = "block";
    } else if (textoMostrado === "texto2") {
-      // Si fue "DIAMANTE", muestra BURST FADE y BALD FADE
-      document.getElementById("burstfade").style.display = "block";
-      document.getElementById("baldfade").style.display = "block";
+       document.getElementById("burstfade-container").style.display = "block";
+       document.getElementById("baldfade-container").style.display = "block";
    } else if (textoMostrado === "texto3") {
-      // Si fue "CIRCULAR", muestra SKIN FADE y FRENCH CROP
-      document.getElementById("skinfade").style.display = "block";
-      document.getElementById("frenchcrop").style.display = "block";
+       document.getElementById("skinfade-container").style.display = "block";
+       document.getElementById("frenchcrop-container").style.display = "block";
    }
 </script>
-
-
-
-<link rel="stylesheet" href="Pagina8.css">
-
 
 </body>
 </html>
