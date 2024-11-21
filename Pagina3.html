@@ -20,25 +20,16 @@
     <script>
         const openCameraBtn = document.querySelector(".openCameraBtn");
     
-        openCameraBtn.addEventListener("click", async () => {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-    
-                console.log("Cámara abierta");
-    
-                setTimeout(() => {
-                    stream.getTracks().forEach(track => track.stop());
-    
-                    console.log("Cámara detenida");
-    
-                    window.location.href = "Pagina7.html";
-                }, 5000);
-            } catch (error) {
-                console.error("Error al acceder a la cámara:", error);
-                alert("No se pudo acceder a la cámara");
-            }
+        openCameraBtn.addEventListener("click", () => {
+            fetch('/start-camera', { method: 'POST' }) // Inicia la cámara llamando al servidor
+                .then(() => {
+                    setTimeout(() => {
+                        // Redirige a la página correcta
+                        window.location.href = "/static/Pagina7.html";
+                    }, 5000); // Espera 5 segundos antes de redirigir
+                })
+                .catch(error => console.error('Error:', error));
         });
     </script>
-    
 </body>
 </html>
