@@ -10,9 +10,15 @@ app = FastAPI()
 # Montar una carpeta "static" donde estará Pagina7.html
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# Configurar el detector de rostros y el predictor de puntos faciales
+# Verificación de carga del predictor
+try:
+    predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+    print("¡Predictor cargado correctamente!")
+except Exception as e:
+    print(f"Error al cargar el predictor: {e}")
+
+# Configurar el detector de rostros
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
 # Función principal de reconocimiento facial
 def run_camera():
@@ -49,7 +55,7 @@ def run_camera():
 
         rostros = detector(gray)
         for rostro in rostros:
-            landmarks = predictor(gray, rostro)
+            landmarks = predictor(gray, rostro)  # Aquí se usa el predictor cargado anteriormente
             puntos = [(p.x, p.y) for p in landmarks.parts()]
 
             forma_cara = determinar_forma_del_rostro(landmarks.parts())
@@ -76,6 +82,11 @@ def start_camera():
     thread.start()
     return {"message": "Cámara iniciada"}
 
+@app.post("/ia")
+async def llamarIa():
+    # Llamas a la IA
+    return {"message": "IA iniciada"}
+
 # Ruta para redirigir a la página Pagina7.html
 @app.get("/redirect-to-page7")
 def redirect_to_page7():
@@ -84,4 +95,30 @@ def redirect_to_page7():
 # Ruta para servir la página principal
 @app.get("/", response_class=HTMLResponse)
 def serve_html():
+    html_content = """
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Peluquería</title>
+    </head>
+    <body>
+        <h1>Debes aparecer así en la cámara</h1>
+        <button onclick="startCamera()">Abrir Cámara</button>
+
+        <script>
+            function startCamera() {
+                fetch('/start-camera', { method: 'POST' })
+                    .then(() => {
+                        setTimeout(() => {
+                            window.location.href = '/static/Pagina7.html';
+                        }, 5000); // Espera 5 segundos antes de redirigir
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+        </script>
+    </body>
+    </html>
+    """
     return HTMLResponse(content=html_content)
