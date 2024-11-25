@@ -7,10 +7,7 @@ import dlib
 from fastapi import FastAPI
 import uvicorn
 from typing import Union
-import google.generativeai as genai
 import requests
-import cloudinary
-import cloudinary.uploader
 from fastapi import FastAPI, File, UploadFile
 import os
 import requests
@@ -25,6 +22,22 @@ from PIL import Image
 import io
 
 app = FastAPI()
+
+
+app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
+
+@app.get("/", response_class=HTMLResponse)
+async def home(request: Request):
+    return templates.TemplateResponse("Pagina1.html", {"request": request})
+
+
+@app.get("/Pagina2.html", response_class=HTMLResponse)
+async def home(request: Request):
+    return templates.TemplateResponse("Pagina2.html", {"request": request})
+
+
 
 # Montar una carpeta "static" donde estará Pagina7.html
 app.mount("/static", StaticFiles(directory="static"), name="static")
