@@ -7,10 +7,39 @@
 </head>
 <body>
     <h1>Debes aparecer así en la cámara</h1>
-    <button class="openCameraBtn">Abrir Cámara</button>
 
     <img class="tijera" src="tijerita 2.png">
     <img class="Joni" src="Joni.png">
 
+    <link rel="stylesheet" href="Pagina3.css">
+    <button class="openCameraBtn">Abrir Cámara</button>
+    <video id="videoElement" width="640" height="480" autoplay></video>
+
+    <script>
+        const openCameraBtn = document.querySelector(".openCameraBtn");
+        const videoElement = document.querySelector("#videoElement");
+
+        openCameraBtn.addEventListener("click", () => {
+            // Solicitar acceso a la cámara
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    // Asigna el flujo de la cámara al elemento de video
+                    videoElement.srcObject = stream;
+
+                    // Espera 5 segundos y luego redirige
+                    setTimeout(() => {
+                        // Detener el flujo de la cámara antes de redirigir
+                        let tracks = stream.getTracks();
+                        tracks.forEach(track => track.stop());
+
+                        // Redirige a la siguiente página
+                        window.location.href = "Pagina7.html";
+                    }, 5000); // Espera 5 segundos antes de redirigir
+                })
+                .catch(error => {
+                    console.error("Error al acceder a la cámara:", error);
+                });
+        });
+    </script>
 </body>
 
