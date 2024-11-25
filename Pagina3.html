@@ -10,31 +10,8 @@
     <button class="openCameraBtn">Abrir Cámara</button>
     <button onclick="llamar()">Llamar IA</button>
 
-    <img src="tijerita 2.png" alt="tijera">
-
-    <script>
-        const openCameraBtn = document.querySelector(".openCameraBtn");
-
-        openCameraBtn.addEventListener("click", () => {
-            fetch('/start-camera', { method: 'POST' }) // Inicia la cámara llamando al servidor
-                .then(() => {
-                    setTimeout(() => {
-                        // Redirige a la página correcta
-                        window.location.href = "/static/Pagina7.html";
-                    }, 5000); // Espera 5 segundos antes de redirigir
-                })
-                .catch(error => console.error('Error:', error));
-        });
-
-        function llamar() {
-            fetch("/ia") // Llama a la IA
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.error('Error al llamar IA:', error));
-        }
-    </script>
-
-<link rel="stylesheet" href="Pagina3.css">
+    <img class="tijera" src="tijerita 2.png">
+    <img class="Joni" src="Joni.png">
 
 </body>
-</html>
+
