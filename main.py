@@ -4,6 +4,25 @@ from fastapi.staticfiles import StaticFiles
 import threading
 import cv2
 import dlib
+from fastapi import FastAPI
+import uvicorn
+from typing import Union
+import google.generativeai as genai
+import requests
+import cloudinary
+import cloudinary.uploader
+from fastapi import FastAPI, File, UploadFile
+import os
+import requests
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
+from fastapi import Request
+from fastapi import FastAPI, Request, UploadFile, File
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from PIL import Image
+import io
 
 app = FastAPI()
 
