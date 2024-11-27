@@ -28,10 +28,10 @@
                     videoElement.srcObject = stream;
 
                     // Llamar al servidor para iniciar main.py
-                    fetch("/run-script")
-                        .then(response => response.json())
-                        .then(data => console.log(data.message))
-                        .catch(error => console.error("Error:", error));
+                    fetch("http://127.0.0.1:5000/run-script")
+    .then(response => response.json())
+    .then(data => console.log(data.message))
+    .catch(error => console.error("Error:", error));
 
                     // Esperar 5 segundos y luego redirigir
                     setTimeout(() => {
