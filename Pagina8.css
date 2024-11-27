@@ -35,13 +35,13 @@ body, html
     border-radius: 50px; 
     font-weight: bold;
     text-decoration: none; 
-    color: black;
+    color: white;
     text-align: center; 
     z-index: 15; 
-    transform: translateX(350px);
-    background-color: white; 
+    transform: translateX(355px);
+    background-color: black; 
     position: absolute; 
-    top: 50px;
+    top: 240px;
 }
 
 .textos {
@@ -53,20 +53,20 @@ body, html
     border-radius: 50px; 
     font-weight: bold;
     text-decoration: none; 
-    color: black;
+    color: white;
     text-align: center; 
     margin: 1px 500px;
     z-index: 15;
-    transform: translateX(10px);
-    background-color: white; 
+    transform: translateX(180px);
+    background-color: black; 
     position: absolute;
-    top: 50px; 
+    top: 240px; 
 }
 
 .imagen {
     position: absolute;
     width: 100px;
-    transform: translateX(690px);
+    transform: translateX(735px);
     z-index: 10;
     top: 350px;
 }
@@ -74,7 +74,7 @@ body, html
 .imagenes {
     position: absolute;
     width: 100px;
-    transform: translateX(380px);
+    transform: translateX(420px);
     z-index: 10;
     top: 350px;
 }

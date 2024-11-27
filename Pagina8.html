@@ -43,6 +43,7 @@
 </div>
 
 <script>
+   
    const textoMostrado = localStorage.getItem("textoMostrado");
 
    document.querySelectorAll('.text-image').forEach(element => {
@@ -52,12 +53,18 @@
    if (textoMostrado === "texto1") {
        document.getElementById("buzzcutt-container").style.display = "block";
        document.getElementById("taperfade-container").style.display = "block";
+       document.getElementById("buzzcutt").style.display = "block";
+       document.getElementById("taperfade").style.display = "block";
    } else if (textoMostrado === "texto2") {
        document.getElementById("burstfade-container").style.display = "block";
        document.getElementById("baldfade-container").style.display = "block";
+       document.getElementById("burstfade").style.display = "block";
+       document.getElementById("baldfade").style.display = "block";
    } else if (textoMostrado === "texto3") {
        document.getElementById("skinfade-container").style.display = "block";
        document.getElementById("frenchcrop-container").style.display = "block";
+       document.getElementById("skinfade").style.display = "block";
+       document.getElementById("frenchcrop").style.display = "block";
    }
 </script>
 
