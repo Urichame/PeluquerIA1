@@ -97,3 +97,12 @@ input[type="file"]
 {
     display: none;
 }
+
+#videoElement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+   border-radius: 10px;
+    z-index: 4; /* Video por encima de todo */
+}
