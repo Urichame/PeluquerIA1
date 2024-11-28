@@ -38,7 +38,7 @@ body, html
     color: white;
     text-align: center; 
     z-index: 15; 
-    transform: translateX(355px);
+    transform: translateX(370px);
     background-color: black; 
     position: absolute; 
     top: 240px;
@@ -57,7 +57,7 @@ body, html
     text-align: center; 
     margin: 1px 500px;
     z-index: 15;
-    transform: translateX(180px);
+    transform: translateX(155px);
     background-color: black; 
     position: absolute;
     top: 240px; 
